@@ -9,6 +9,7 @@ import ch.endte.syncmatica.communication.ServerCommunicationManager;
 import ch.endte.syncmatica.network.actor.IServerPlay;
 import ch.endte.syncmatica.network.handler.ServerPlayHandler;
 import ch.endte.syncmatica.network.SyncmaticaPacket;
+import net.minecraft.server.GameInstance;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
@@ -35,7 +36,7 @@ public abstract class MixinServerPlayNetworkHandler implements IServerPlay
     private ServerCommunicationManager comManager = null;
 
     @Inject(method = "<init>", at = @At("TAIL"))
-    public void syncmatica$onConnect(MinecraftServer server, ClientConnection clientConnection, ServerPlayerEntity player, ConnectedClientData clientData, CallbackInfo ci)
+    public void syncmatica$onConnect(GameInstance gameInstance, ClientConnection connection, ServerPlayerEntity player, ConnectedClientData clientData, CallbackInfo ci)
     {
         syncmatica$operateComms(sm -> sm.onPlayerJoin(syncmatica$getExchangeTarget(), player));
     }

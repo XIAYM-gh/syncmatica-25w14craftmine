@@ -7,6 +7,13 @@ Syncmatica is a mod which aims to mod into litematica so that schematics and the
 Syncmatica is a mod that gives its users a lot of power and can have consequences for the server. Only use this mod if
 you feel confident that your users won't abuse it too heavily.
 
+## Compiling
+* First, you need to build [malilib-25w14craftmine](https://github.com/XIAYM-gh/malilib-25w14craftmine) & [litematica-25w14craftmine](https://github.com/XIAYM-gh/litematica-25w14craftmine) and publish them to maven local repository
+* Then, clone the repository
+* Open a command prompt/terminal to the repository directory
+* run 'gradlew build' (or try '.\gradlew build' if this fails with Powershell)
+* The built jar file will be in build/libs/
+
 ## Setup
 
 Syncmatica is a mod for both Minecraft client and server.

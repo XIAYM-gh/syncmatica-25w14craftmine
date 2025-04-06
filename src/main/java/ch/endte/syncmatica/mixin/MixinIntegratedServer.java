@@ -3,6 +3,7 @@ package ch.endte.syncmatica.mixin;
 import ch.endte.syncmatica.Context;
 import ch.endte.syncmatica.Reference;
 import ch.endte.syncmatica.Syncmatica;
+import net.minecraft.server.GameInstance;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -26,7 +27,7 @@ public class MixinIntegratedServer
     }
 
     @Inject(method = "openToLan", at = @At("RETURN"))
-    private void syncmatica$checkOpenToLan(GameMode gameMode, boolean cheatsAllowed, int port, CallbackInfoReturnable<Boolean> cir)
+    private void syncmatica$checkOpenToLan(GameInstance gameInstance, GameMode gameMode, boolean bl, int i, CallbackInfoReturnable<Boolean> cir)
     {
         if (cir.getReturnValue())
         {

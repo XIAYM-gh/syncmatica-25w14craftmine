@@ -32,7 +32,7 @@ public class MixinMinecraftServer
         }
     }
 
-    @Inject(at = @At(value = "INVOKE", target = "Lnet/minecraft/server/MinecraftServer;createMetadata()Lnet/minecraft/server/ServerMetadata;", ordinal = 0), method = "runServer")
+    @Inject(at = @At(value = "INVOKE", target = "Lnet/minecraft/server/MinecraftServer;method_70561(Lnet/minecraft/server/GameInstance;)V", ordinal = 0), method = "runServer")
     private void syncmatica$onServerStarted(CallbackInfo ci)
     {
         final MinecraftServer server = (MinecraftServer) (Object) this;

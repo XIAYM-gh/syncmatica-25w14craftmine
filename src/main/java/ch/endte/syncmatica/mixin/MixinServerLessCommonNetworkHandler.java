@@ -3,6 +3,7 @@ package ch.endte.syncmatica.mixin;
 import ch.endte.syncmatica.Reference;
 import ch.endte.syncmatica.network.SyncmaticaPacket;
 import ch.endte.syncmatica.network.handler.ServerPlayHandler;
+import net.minecraft.class_10972;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -11,8 +12,8 @@ import net.minecraft.network.packet.c2s.common.CustomPayloadC2SPacket;
 import net.minecraft.server.network.ServerCommonNetworkHandler;
 import net.minecraft.server.network.ServerPlayNetworkHandler;
 
-@Mixin(ServerCommonNetworkHandler.class)
-public class MixinServerCommonNetworkHandler
+@Mixin(class_10972.class)
+public class MixinServerLessCommonNetworkHandler
 {
     // This exists because of the Communications Manager / Exchange Target system,
     // and FAPI networking is too slow to register the receivers
